@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: backend-tests-nodejs-lsvjwjer
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-        name: container-image  
+        - image: quay.io/rhtap_qe/backend-tests-nodejs-lsvjwjer:b2c6f7aa89f7ba9d0cf05840daecce33907fa92e@sha256:3f6755d78469f2eb02ddba625e66f0500bdde74dd5ca4225dfe9a28af98cd0fe
+          name: container-image
